@@ -3,111 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hana's Portfolio</title>
+    <title>Sam Tomlin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        /* General Body Styles */
         body {
-            font-family: 'Times New Roman', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #f8f8f8, #f0e6d6);
+            background-color: #f0f0f5;
             color: #333;
         }
 
-        /* Header */
         header {
-            background: linear-gradient(to right, #ff9a8b, #d8b4e2);
+            /* Black and white diagonal stripe pattern */
+            background: repeating-linear-gradient(
+                45deg,
+                black,
+                black 10px,
+                white 10px,
+                white 20px
+            );
             color: white;
-            padding: 40px 0;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 5px solid #666;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
             margin: 0;
-            font-size: 48px;
-            font-family: 'Georgia', serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        header p {
-            font-size: 18px;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Navigation Bar */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-
-        nav a {
-            color: white;
-            padding: 18px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
+            font-size: 3rem;
             letter-spacing: 1px;
-            transition: background 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: inline-block;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        nav a:hover {
-            background-color: #ff9a8b;
-        }
-
-        /* Container for all Content */
-        .container {
+        section {
+            max-width: 900px;
+            margin: 40px auto;
             padding: 30px;
-            background-color: #f9f1e7;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
-        /* About Section */
-        #about {
-            background: linear-gradient(135deg, #ff9a8b, #d8b4e2);
-            padding: 40px;
-            border-radius: 8px;
-            color: white;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #about h2 {
-            font-size: 36px;
+        h2 {
+            color: white; /* Change to white for consistency with header */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add subtle shadow for clarity */
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            font-family: 'Georgia', serif;
+            background-color: black; /* Black background for contrast */
+            display: inline-block;
+            padding: 8px 16px; /* Padding to create a bold subheading */
+            border-radius: 4px;
         }
 
-        #about p {
-            font-size: 18px;
-            line-height: 1.6;
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 30px;
         }
 
-        /* Gallery Section */
-        #gallery {
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 10px 20px;
+            background-color: #f0f0f5;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        ul li a:hover {
+            background-color: #667eea;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9rem;
             margin-top: 40px;
         }
 
-        #gallery h2 {
-            text-align: center;
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-            font-family: 'Georgia', serif;
+        footer p {
+            margin: 0;
         }
 
+        /* Animation for fade-in effect */
+        header, section, footer {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Gallery Styles */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
         }
 
         .gallery img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -115,112 +154,202 @@
             transform: scale(1.05);
         }
 
-        /* Contact Form */
-        #contact {
-            background-color: #ff9a8b;
-            padding: 40px;
-            border-radius: 8px;
-            margin-top: 40px;
-            color: white;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 12px;
-            margin: 12px 0;
-            border: 2px solid #fff;
-            border-radius: 6px;
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
             width: 100%;
-            font-size: 16px;
-            background-color: #fff;
-            color: #333;
-            box-sizing: border-box;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
         }
 
-        .contact-form button {
-            background-color: #d8b4e2;
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
             color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 18px;
-            width: 100%;
-            transition: background 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #ff9a8b;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 40px;
+            font-size: 2rem;
+            text-decoration: none;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
-        <h1>Hana Hepburn | Oil Painter</h1>
-        <p>Bringing art to life through vibrant colors and brushstrokes.</p>
+        <h1>Snaps by Sam</h1>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello hello - you have stumbled upon my website! This is where you'll find all of the creative goings on for me, more commonly known as Sam Tomlin. This page will be mainly focused on photography, but it may contain other exploits if and when they happen.
+        </p>
+        <p>
+            I have travelled around Europe and these pictures document some of my travels: Italy, London, Spain & Cyprus, but hopefully many more soon! Watch this space!
+        </p>
+        <p>
+            Aside from creative things, I have just graduated from King's College London with a 2:1 in Mathematics and am now training to become a teacher.
+        </p>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container">
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <!-- Image Thumbnails -->
+            <a href="#img1"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1" loading="lazy"></a>
+            <a href="#img2"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2" loading="lazy"></a>
+            <a href="#img3"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3" loading="lazy"></a>
+            <a href="#img4"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/NaturalHistory.jpg?raw=true" alt="Image 4" loading="lazy"></a>
+            <a href="#img5"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5" loading="lazy"></a>
+            <a href="#img6"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6" loading="lazy"></a>
+            <a href="#img7"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Car_Bologna.jpg?raw=true" alt="Image 7" loading="lazy"></a>
+            <a href="#img8"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Shop_Window.jpg?raw=true" alt="Image 8" loading="lazy"></a>
+            <a href="#img9"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hotel_Bologna.jpg?raw=true" alt="Image 9" loading="lazy"></a>
+            <a href="#img10"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hyde_Park.jpg?raw=true" alt="Image 10" loading="lazy"></a>
+            <a href="#img11"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Woman_Barbican.jpg?raw=true" alt="Image 11" loading="lazy"></a>
+            <a href="#img12"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Bologna.jpg?raw=true" alt="Image 12" loading="lazy"></a>
+            <a href="#img13"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Venice_From_Afar.jpg?raw=true" alt="Image 13" loading="lazy"></a>
+            <a href="#img14"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Barcelona.jpg?raw=true" alt="Image 14"loading="lazy"></a>
+            <a href="#img15"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Clock_Tower.jpg?raw=true" alt="Image 15" loading="lazy"></a>
+            <a href="#img16"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Sticks_And_Stones.jpg?raw=true" alt="Image 16" loading="lazy"></a>
+            <a href="#img17"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Mantis.jpg?raw=true" alt="Image 17" loading="lazy"></a>
+            <a href="#img18"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Bike_Cyprus.jpg?raw=true" alt="Image 18" loading="lazy"></a>
+            <a href="#img19"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Wedding_Cyprus.jpg?raw=true" alt="Image 19" loading="lazy"></a>
+            <a href="#img20"><img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Harpy_Houseboat.jpg?raw=true" alt="Image 20" loading="lazy"></a>
+        </div>
+        <!-- Lightbox -->
+        <div id="img1" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Rain_On_King's.jpg?raw=true" alt="Image 1">
+        </div>
+        <div id="img2" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/A_Man_Of_Art.jpg?raw=true" alt="Image 2">
+        </div>
+        <div id="img4" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/ElaborateMan2.jpg?raw=true" alt="Image 3">
+        </div>
+        <div id="img5" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/St_Pauls.jpg?raw=true" alt="Image 5">
+        </div>
+        <div id="img6" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Water_Man_Cyprus.jpg?raw=true" alt="Image 6">
+        </div>
+        <div id="img7" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Car_Bologna.jpg?raw=true" alt="Image 7">
+        </div>
+        <div id="img8" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Shop_Window.jpg?raw=true" alt="Image 8">
+        </div>
+        <div id="img9" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hotel_Bologna.jpg?raw=true" alt="Image 9">
+        </div>
+        <div id="img10" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/Hyde_Park.jpg?raw=true" alt="Image 10">
+        </div>
+        <div id="img11" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Woman_Barbican.jpg?raw=true" alt="Image 11">
+        </div>
+        <div id="img12" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Bologna.jpg?raw=true" alt="Image 12">
+        </div>
+        <div id="img13" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Venice_From_Afar.jpg?raw=true" alt="Image 13">
+        </div>
+        <div id="img14" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Square_Barcelona.jpg?raw=true" alt="Image 14">
+        </div>
+        <div id="img15" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Clock_Tower.jpg?raw=true" alt="Image 15">
+        </div>
+        <div id="img16" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Sticks_And_Stones.jpg?raw=true" alt="Image 16">
+        </div>
+        <div id="img17" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Mantis.jpg?raw=true" alt="Image 17">
+        </div>
+        <div id="img18" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Bike_Cyprus.jpg?raw=true" alt="Image 18">
+        </div>
+        <div id="img19" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Wedding_Cyprus.jpg?raw=true" alt="Image 19">
+        </div>
+        <div id="img20" class="lightbox">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="https://github.com/TheOneUpstairs/TheOneUpstairs.github.io/blob/main/photos/Harpy_Houseboat.jpg?raw=true" alt="Image 20">
+        </div>
+        
+    </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About the Artist</h2>
-            <p>Hello! I'm Hana, an oil painter with a deep passion for creating works that evoke emotion and beauty. I specialize in landscape and portrait oil paintings, using simple colours and rich textures to bring the subject to life. Each painting is a reflection of my love for art and the world around me. I believe in capturing the soul of nature and people through brushstrokes, turning ordinary moments into extraordinary ones.</p>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <a href="#img1"><img src="https://www.github.com/snapsbysam/snapsbysam.github.io/blob/main/photos/Hana%20Painting.jpg?raw=true" alt="Landscape Painting 1"></a>
+     <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li><a href="pdfs/A Collection of Poems from a Curious Explorer.pdf" download>A Collection of Poems from a Curious Explorer</a></li>
+        </ul>
+    </section>
+    
+    <section id="instagram">
+        <h2>Follow Me on Instagram</h2>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C3JOfegtaqi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <div style="padding:16px;">
+                <a href="https://www.instagram.com/p/C3JOfegtaqi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                        <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                            <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                            <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 19% 0;"></div>
+                    <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                        <svg width="50px" height="50px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-444.000000, -156.000000)"><g transform="translate(444.000000, 156.000000)"></g></g></g></svg>
+                    </div>
+                    <div style="padding-top: 8px;">
+                        <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 90px;"></div>
+                        <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                    </div>
+                </a>
             </div>
-            
+        </blockquote> 
+        <script async src="//www.instagram.com/embed.js"></script>
+    </section>
 
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you would like to inquire about purchasing a painting or commissioning a custom piece, please fill out the form below. I'd love to hear from you!</p>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-    </div>
-
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Hana Hepburn | All Rights Reserved</p>
+        <p>&copy; 2024 Sam Tomlin. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+
