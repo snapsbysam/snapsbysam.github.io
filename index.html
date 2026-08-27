@@ -134,7 +134,45 @@
                 font-size: 2.5rem;
             }
         }
+        /* Websites Section Styles */
+        .website-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
+        .website-item {
+            background-color: #f9f9fb;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .website-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .website-item a {
+            text-decoration: none;
+            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .website-item a:hover {
+            color: #333;
+        }
+
+        .website-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
         /* Gallery Styles */
         .gallery {
             display: grid;
@@ -203,7 +241,7 @@
             I have travelled around Europe and these pictures document some of my travels: Italy, London, Spain & Cyprus, but hopefully many more soon! Watch this space!
         </p>
         <p>
-            Aside from creative things, I have just graduated from King's College London with a 2:1 in Mathematics and have finished a Mathematics PGCE this year. You will find a range of interesting mathematical projects beneath the photos!
+            Aside from creative things, I have graduated from King's College London with a 2:1 in Mathematics and have recently become a secondary teacher. You will find a range of interesting mathematical projects & websites, beneath the photos!
         </p>
     </section>
 
@@ -317,6 +355,45 @@
         
     </section>
 
+    <section id="websites">
+        <h2>My Websites</h2>
+        <div class="website-list">
+            
+            <!-- Website 1 -->
+            <div class="website-item">
+                <a href="YOUR_LINK_HERE" target="_blank">Mathematical Wordplay</a>
+                <p>An interactive literacy and math game designed to test your vocabulary and problem-solving skills.</p>
+            </div>
+            
+            <!-- Website 2 -->
+            <div class="website-item">
+                <a href="YOUR_LINK_HERE" target="_blank">Guess It Maths</a>
+                <p>A collaborative mathematical guessing game co-created with E. Pettigrew.</p>
+            </div>
+
+            <!-- Website 3 -->
+            <div class="website-item">
+                <a href="YOUR_LINK_HERE" target="_blank">Math Boggle</a>
+                <p>A 4x4 grid mathematical calculation game hosted on GitHub Pages, inspired by the classic word game.</p>
+            </div>
+
+            <!-- Website 4 -->
+            <div class="website-item">
+                <a href="YOUR_LINK_HERE" target="_blank">Prime Path Combination Lock</a>
+                <p>An interactive combination lock simulator where you navigate prime number paths, inspired by James Stanley.</p>
+            </div>
+
+            <!-- Blank Template for future sites -->
+            <!-- 
+            <div class="website-item">
+                <a href="YOUR_LINK_HERE" target="_blank">Website Title</a>
+                <p>Write a few sentences describing the website here.</p>
+            </div> 
+            -->
+
+        </div>
+    </section>
+
      <section id="projects">
         <h2>My Projects</h2>
         <ul>
@@ -354,7 +431,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Sam Tomlin. All rights reserved.</p>
+        <p>&copy; 2026 Sam Tomlin. All rights reserved.</p>
     </footer>
 
 </body>
